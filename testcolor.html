@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>颜色切换</title>
+		<style type="text/css">
+			div{width: 80px;height: 30px;}
+			.one{border: red 1px solid;background-color: gray;}
+			.two{border: red 3px solid;background-color: orange;}
+			.there{border: red 5px solid;background-color: green;}
+			.four{border: red 7px solid;background-color: orangered;}
+		</style>
+	</head>
+	<body>
+		<div class="two" onmouseout="tocolor()"></div>
+		<div class="one" onmouseout="tocolor()"></div>
+	</body>
+	<script type="text/javascript">
+		var num=1;
+		var divobj=document.getElementsByTagName("div")[0];
+		function tocolor(){
+			if(num==4){
+				num=1;
+			}else{
+				num++;
+			}
+			switch(num){
+				case 1:
+					divobj.className="one";
+					break;
+				case 2:
+					divobj.className="two";
+					break;
+				case 3:
+					divobj.className="there";
+					break;
+				case 4:
+					divobj.className="four";
+					break;
+			}
+		}
+	</script>
+</html>

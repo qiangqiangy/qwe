@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="crtab" id="crtab">
+					<ul id="tabli">
+						<li class="active" onmouseover="gun(1)">公告</li>
+						<li onmouseover="gun(2)">规则</li>
+						<li onmouseover="gun(3)">论坛</li>
+						<li onmouseover="gun(4)">安全</li>
+						<li onmouseover="gun(5)">公益</li>
+					</ul>
+					<div class="contab" style="display: block;" id="tab1">
+						<ul>
+							<li>公告：阿里巴巴不会裁员 将继续招人</li>
+							<li>公告：阿里巴巴不是破产 只是透支了</li>
+							<li>公告：阿里巴巴不再借钱 花呗没戏了</li>
+							<li>公告：相信阿里巴巴明天的你就是马云</li>
+							<li>公告：本公司与前途有限无线集团合作</li>
+						</ul>
+					</div>
+					<div class="contab" id="tab2">
+						<ul>
+							<li>推荐：夏海龙摧毁停车场</li>
+							<li>推荐：夏海龙摧毁停车场</li>
+							<li>推荐：夏海龙摧毁停车场</li>
+							<li>推荐：夏海龙摧毁停车场</li>
+							<li>推荐：夏海龙摧毁停车场</li>
+						</ul>
+					</div>
+					<div class="contab" id="tab3">
+						<ul>
+							<li>推荐：杨奥修天路</li>
+							<li>推荐：杨奥修天路</li>
+							<li>推荐：杨奥修天路</li>
+							<li>推荐：杨奥修天路</li>
+							<li>推荐：杨奥修天路</li>
+						</ul>
+					</div>
+					<div class="contab" id="tab4">
+						<ul>
+							<li>推荐：黎逸武跳火车</li>
+							<li>推荐：黎逸武跳火车</li>
+							<li>推荐：黎逸武跳火车</li>
+							<li>推荐：黎逸武跳火车</li>
+							<li>推荐：黎逸武跳火车</li>
+						</ul>
+					</div>
+					<div class="contab" id="tab5">
+						<ul>
+							<li>推荐：朱江嬲啪啪</li>
+							<li>推荐：朱江嬲啪啪</li>
+							<li>推荐：朱江嬲啪啪</li>
+							<li>推荐：朱江嬲啪啪</li>
+							<li>推荐：朱江嬲啪啪</li>
+						</ul>
+					</div>
+				</div>
+	</body>
+	<script type="text/javascript">
+		var gunul=document.getElementById("tabli");
+		var gunli=gunul.getElementsByTagName("li");
+		function gun(num){
+			for(var i=1;i<=gunli.length;i++){
+				if(i==num){
+					document.getElementById('tab'+num).style.display="block";
+					gunli[i-1].className="active";
+				}else{
+					document.getElementById("tab"+i).style.display="none";
+					gunli[i-1].className="";
+				}
+			}
+		}
+//		function gun(num){
+//			for(var i=1;i<=gunli.length;i++){
+//				document.getElementById("tab"+i).style.display="none";
+//				gunli[i-1].className="";
+//			}
+//			document.getElementById('tab'+num).style.display="block";
+//			gunli[num-1].className="active";
+//		}
+	</script>
+</html>

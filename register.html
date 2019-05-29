@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册页</title>
+		<link rel="stylesheet" type="text/css" href="css/constyle.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.0.min.js" ></script>
+		<script>
+			$(document).ready(function(){
+				$("input").focus(function(){
+					$(this).after("<span id='s'>*请不要为空</span>");
+				});
+				$("input").focusout(function(){
+					$("#s").remove();
+				});
+				$(document).mousedown(function(e){
+					if(e.which==3){
+						alert("不允许");
+					}
+				});
+			});
+		</script>
+		<style>
+			span{color: red;}
+		</style>
+	</head>
+	
+	<body>
+		<div class="contair">
+		<iframe src="header.html" width="980px" height="130px" frameborder="0" scrolling="no"></iframe>
+					
+		<div class="regmid">
+			<h1>注册</h1>
+			<form>
+				<table class="regtab" cellspacing="0" cellpadding="0">
+					<tbody>
+						<tr>
+							<td class="w15px">名称:</td>
+							<td class="w500"><input type="text" name="uname" />(&nbsp;可包含a-z 0-9和下划线&nbsp;)</td>
+							<td rowspan="9"><h2>注册协议</h2>
+								<textarea cols="20" rows="20">注册协议注册协议注册协议注册协议注册协议注册协议注册协议注册协议注册协议注册协议注册协议注册协议注册协议注册协议注册协议注册协议注册协议</textarea>
+							</td>
+						</tr>
+						<tr>
+							<td class="w15px">密码:</td>
+							<td><input type="password" name="pws" />(&nbsp;可包含a-z 0-9和下划线&nbsp;)</td>
+						</tr>
+						<tr>
+							<td class="w15px">确认密码:</td>
+							<td><input type="password" name="repwd" /></td>
+						</tr>
+						<tr>
+							<td class="w15px">性别:</td>
+							<td><input type="radio" name="usex" checked=""/>男<input type="radio" name="usex" />女</td>
+						</tr>
+						<tr>
+							<td class="w15px">电话:</td>
+							<td><input type="number" name="utel" /></td>
+						</tr>
+						<tr>
+							<td class="w15px">图像:</td>
+							<td><input type="file" name="ufile" /></td>
+						</tr>
+						<tr>
+							<td class="w15px">身份证号:</td>
+							<td><input type="text" name="ucid" /></td>
+						</tr>
+						<tr>
+							<td class="w15px">E-mail:</td>
+							<td><input type="email" name="uemail" /></td>
+						</tr>
+						<tr align="center">
+							<td colspan="2" class="regbtn"><input type="submit" value="注册" />&nbsp;<input type="reset" value="重置" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+			
+		<iframe src="foot.html" width="980px" height="130px" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</body>
+</html>

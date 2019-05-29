@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>产品列表</title>
+		<link rel="stylesheet" type="text/css" href="css/constyle.css"/>
+		<script type="text/javascript">
+			function checkall(othis){
+				
+				var inputobj=document.getElementById("tab").getElementsByTagName("input");
+			 
+				for(var i=1;i<inputobj.length;i++){
+					inputobj[i].checked=othis.checked;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="contair">
+			<iframe src="header.html" width="980px" height="130px" style="list-style: none;" frameborder="0" scrolling="no"></iframe>
+			
+			<div class="cartmid">
+				<h4>产品列表</h4>
+				<table id="tab">
+					<thead>
+						<tr>
+							<th><input type="checkbox" onclick="checkall(this)" />全选</th>
+							<th>商品列表</th>
+							<th>商品信息</th>
+							<th>商品价格</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr align="center">
+							<td><input type="checkbox" /></td>
+							<td><img src="img/list1.jpg"/></td>
+							<td style="line-height: 30px;">
+								杜比环绕,家庭影院必备,超真实享受<br />
+								出售者:pmr<br />
+								<img src="img/contactme.gif"/>
+							</td>
+							<td>一口价：￥888</td>
+						</tr>
+						<tr align="center">
+							<td><input type="checkbox" /></td>
+							<td><img src="img/list2.jpg"/></td>
+							<td style="line-height: 30px;">
+								杜比环绕,家庭影院必备,超真实享受<br />
+								出售者:pmr<br />
+								<img src="img/contactme.gif"/>
+							</td>
+							<td>一口价：￥888</td>
+						</tr>
+						<tr align="center">
+							<td><input type="checkbox" /></td>
+							<td><img src="img/list3.jpg"/></td>
+							<td style="line-height: 30px;">
+								杜比环绕,家庭影院必备,超真实享受<br />
+								出售者:pmr<br />
+								<img src="img/contactme.gif"/>
+							</td>
+							<td>一口价：￥888</td>
+						</tr>
+						<tr align="center">
+							<td><input type="checkbox" /></td>
+							<td><img src="img/list4.jpg"/></td>
+							<td style="line-height: 30px;">
+								杜比环绕,家庭影院必备,超真实享受<br />
+								出售者:pmr<br />
+								<img src="img/contactme.gif"/>
+							</td>
+							<td>一口价：￥888</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="jiesuan" align="right">
+					<input type="button" value="结算" class="allbtn"/>
+				</div>
+			</div>
+			
+			<iframe src="foot.html" width="980px" height="75px" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</body>
+</html>

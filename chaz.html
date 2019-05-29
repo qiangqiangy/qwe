@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+//			window.onload=aa();
+//		function aa(){
+//		var a=document.getElementsByTagName('a');
+//		alert(document.getElementsByTagName('a').length);
+//		for (var i=0;i<a.length;i++) {
+////			alert(a[i].innerHTML);
+////			document.write(a[i].innerHTML);
+//		}
+window.onload=function(){
+			aa();
+		}
+function aa(){
+	var a=document.getElementsByTagName('a');
+	alert(document.getElementsByTagName('a').length);
+	for (var i=0;i<a.length;i++) {
+		alert(a[i].innerHTML);
+			document.write(a[i].innerHTML);
+	}
+}
+
+	function jsj(){
+		
+		var yi=document.getElementById('yi');
+		var er=document.getElementById('er');
+		var fu=document.getElementById("fu");
+		var he=document.getElementById("he");
+		var js=(fu.value)
+		switch(js){
+			case '1':
+				he.value=(Number(yi.value) + Number(er.value));
+				break;
+			case '2':
+				he.value=(Number(yi.value) - Number(er.value));
+				break;
+			case '3':
+				he.value=(Number(yi.value) * Number(er.value));
+				break;
+			case '4':
+				he.value=(Number(yi.value) / Number(er.value));
+				break;
+		default:
+			alert("错误");
+			break;
+		}
+}
+</script>
+	<body>
+		<div><a>a标签的内容</a></div>
+		
+		<br />
+		<input type="number" style="width: 60px;" id="yi" />
+			<select id="fu">
+				<option value="1">+</option>
+				<option value="2">-</option>
+				<option value="3">*</option>
+				<option value="4">/</option>
+			</select>
+		<input type="number" style="width: 60px;" id="er"/>
+		=
+		<input type="number" style="width: 60px;" id="he" />
+		<button onclick="jsj()">计算</button>
+	</body>
+	
+</html>
+

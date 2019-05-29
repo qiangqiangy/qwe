@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="css/constyle.css"/>
+	</head>
+	<body>
+		<div class="contair">
+			<iframe src="header.html" width="980px" height="130px" style="list-style: none;" frameborder="0" scrolling="no"></iframe>
+			
+			<div class="cartmid">
+				<h3><img src="img/mycart.gif"/><a>全场一律免邮</a><a>简易计算器</a></h3>
+				<h4>确认商品价格与数量</h4>
+				<table cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<th width="15%">商品名</th>
+							<th>原价</th>
+							<th>优惠价</th>
+							<th>折扣</th>
+							<th width="10%">数量</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody id="tbtr">
+						<tr align="center">
+							<td>联想电脑</td>
+							<td>原价:￥999</td>
+							<td>现价:￥888</td>
+							<td>0.9折</td>
+							<td><input type="number" name="num" value="1" onblur="" /></td>
+							<td><a href="javascript:void(0)" onclick="remover(this)">删除</a></td>
+						</tr>
+						<tr align="center">
+							<td>联想电脑</td>
+							<td>原价:￥999</td>
+							<td>现价:￥888</td>
+							<td>0.9折</td>
+							<td><input type="number" name="num" value="2" /></td>
+							<td><a href="javascript:void(0)" onclick="remover(this)">删除</a></td>
+						</tr>
+						<tr align="center">
+							<td>联想电脑</td>
+							<td>原价:￥999</td>
+							<td>现价:￥888</td>
+							<td>0.9折</td>
+							<td><input type="number" name="num" value="3" /></td>
+							<td><a href="javascript:void(0)" onclick="remover(this)">删除</a></td>
+						</tr>
+						<tr align="center">
+							<td>联想电脑</td>
+							<td>原价:￥999</td>
+							<td>现价:￥888</td>
+							<td>0.9折</td>
+							<td><input type="number" name="num" value="4" /></td>
+							<td><a href="javascript:void(0)" onclick="remover(this)">删除</a></td>
+						</tr>
+						<tr align="center">
+							<td>联想电脑</td>
+							<td>原价:￥999</td>
+							<td>现价:￥888</td>
+							<td>0.9折</td>
+							<td><input type="number" name="num" value="5" /></td>
+							<td><a href="javascript:void(0)" onclick="remover(this)">删除</a></td>
+						</tr>
+						<tr>
+							<td>总价格：<span id="sumprice" style="color: red;"></span></td>
+							<td colspan="5" align="right" class="carbtn"><input type="button" value="确认"/></td>
+						</tr>
+					</tbody>
+						
+				</table>
+				
+				<h4>补充收件人的信息</h4>
+				<table>
+					<tr>
+						<td width="30%" align="right">收件人：<input type="text"/></td>
+						<td width="30%"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td align="right">地址：<input type="text"/>(请填写准确的地址)</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td align="right">电话：<input type="text" /></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><input type="submit" value="提交" class="allbtn" /></td>
+					</tr>
+				</table>
+			</div>
+			
+			<iframe src="foot.html" width="980px" height="75px" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</body>
+	<script>
+		function loadprice(){
+			var trobj=document.getElementById("tbtr").getElementsByTagName("tr");
+			//alert(trobj.length);
+			var sum=0;
+			for (var i=0;i<trobj.length-1;i++) {
+				var tdobj=trobj[i].getElementsByTagName("td");
+				var firstprice=parseFloat(tdobj[1].innerHTML.substring(4));
+				var nums=parseInt(trobj[i].getElementsByTagName("input")[0].value);
+				//alert(nums);
+				sum +=(firstprice*nums);
+			}
+			document.getElementById("sumprice").innerHTML=sum;
+		}
+		window.onload=loadprice();
+		function remover(othis){
+			ofather=othis.parentNode.parentNode;
+			ofather.parentNode.removeChild(ofather);
+			loadprice();
+		}
+	</script>
+</html>

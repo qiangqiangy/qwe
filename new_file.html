@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div class="crtab">
+			<ul id="crtab">
+				<li class="active" onmouseover="aa(1)">关于</li>
+				<li onmouseover="aa(2)">我们</li>
+				<li onmouseover="aa(3)">意义</li>
+			</ul>
+			<div class="tab1" id="tab1">
+				<ul>
+					<li>aaaaaa</li>
+					<li>aaaaaa</li>
+					<li>aaaaaa</li>
+				</ul>
+			</div>
+			<div class="tab1" id="tab2" style="display: none;">
+				<ul>
+					<li>bbbbbb</li>
+					<li>bbbbbb</li>
+					<li>bbbbbb</li>
+				</ul>
+			</div>
+			<div class="tab1" id="tab3"style="display: none;">
+				<ul>
+					<li>cccccc</li>
+					<li>cccccc</li>
+					<li>cccccc</li>
+				</ul>
+			</div>
+			<div></div>
+		</div>
+	</body>
+	<script>
+		var ulbj=document.getElementById("crtab");
+		var libj=ulbj.getElementsByTagName("li");
+		function aa(num){
+			for(var i=1;i<=libj.length;i++){
+				if(num==i){
+					document.getElementById("tab"+num).style.display="block";
+					libj[i-1].className="active";
+				}
+				else{
+					document.getElementById("tab"+i).style.display="none";
+					libj[i-1].className="";
+				}
+			}
+		}
+		
+	</script>
+</html>

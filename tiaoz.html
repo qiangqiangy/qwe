@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<div>
+			还有<span id="tnum"></span>后跳转到首页
+		</div>-->
+		<div>
+			<ul id="uid">
+				<li id="wid" name="liname">aa</li>
+			</ul>
+			<ul>
+				<li>jj</li>			</ul>
+		</div>
+	</body>
+</html>
+<script>
+//	window.onload=function(){
+//	var tnum=document.getElementById("tnum");
+//	var flag;
+//	var time=10;
+//	tnum.innerHTML=time;
+//	function tiaoz(){
+//		time=time-1;
+//		tnum.innerHTML=time;
+//		if(time==0){
+//			location.href="index.html";
+//			clearInterval(flag);
+//		}
+//	}
+//	flag=setInterval(tiaoz,1000);
+//}
+	window.onload=showli();
+	function showli(){
+		var liid=document.getElementById('wid');
+		document.write(liid.innerHTML);
+//		alert("a");
+		var uidobjk=document.getElementById('uid');
+		var liname=document.getElementsByTagName('li');
+		
+		document.write(liname[1].innerHTML);
+	}
+</script>

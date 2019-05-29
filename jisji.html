@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>计算机</title>
+		<style>
+			table tr td{width: 30px;}
+			input[type="button"]{width: 35px;}
+		</style>
+	</head>
+	<body>
+		<table border="0" align="center">
+		<tr>
+			<td colspan="4">
+				<input type="text" id="sums" value="0" style="text-align: right;" />
+			</td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onclick="enternum(7)" /></td>
+			<td><input type="button" value="8" onclick="enternum(8)"/></td>
+			<td><input type="button" value="9" onclick="enternum(9)" /></td>
+			<td><input type="button" value="+" onclick="enterfu('+')" /></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick="enternum(4)"/></td>
+			<td><input type="button" value="5" onclick="enternum(5)" /></td>
+			<td><input type="button" value="6" onclick="enternum(6)" /></td>
+			<td><input type="button" value="-" onclick="enterfu('-')" /></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onclick="enternum(1)" /></td>
+			<td><input type="button" value="2" onclick="enternum(2)" /></td>
+			<td><input type="button" value="3" onclick="enternum(3)"/></td>
+			<td><input type="button" value="*" onclick="enterfu('*')"/></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="0"  onclick="enternum(0)"/></td>
+			<td><input type="button" value="c"  onclick="clearji()" /></td>
+			<td><input type="button" value="="  onclick="enterfu('=')"/></td>
+			<td><input type="button" value="/"  onclick="enterfu('/')"/></td>
+		</tr>
+		</table>
+	</body>
+	<script>
+		var total=0;
+		var flag=false;
+		var oop="";
+		function clearji(){
+			total=0;
+			flag=false;
+			document.getElementById("sums").value=0;
+		}
+		
+		function enternum(num){
+			if(flag){
+				document.getElementById("sums").value=num;
+				flag=false;
+			}
+			else{
+				if(document.getElementById("sums").value==0){
+					document.getElementById("sums").value=num;
+				}
+				else{
+					document.getElementById("sums").value+=num;
+				}
+			}
+		}
+		function enterfu(fu)
+		{
+			var tovalue=document.getElementById("sums").value;
+			flag=true;
+			
+			switch(oop){
+				case '+':
+				total+=parseFloat(tovalue);
+				break;
+				case '-':
+				total-=parseFloat(tovalue);
+				break;
+				case '*':
+				total*=parseFloat(tovalue);
+				break;
+				case '/':
+				total/=parseFloat(tovalue);
+				break;
+				default:
+				total=parseFloat(tovalue);
+				break;
+			}
+			oop=fu;
+			document.getElementById("sums").value=total;
+		}
+	</script>
+</html>

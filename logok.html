@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录成功页</title>
+		<link rel="stylesheet" type="text/css" href="css/constyle.css"/>
+	</head>
+	<body>
+		<div class="contair">
+			<iframe src="header.html" width="980px" height="130px" frameborder="0" scrolling="no"></iframe>
+			<div class="loginok">
+				<p><img src="img/login_mouseover.gif"/></p>
+				<p>登录成功...<span id="logonum"></span>秒后跳转到首页</p>
+			</div>
+			<iframe src="foot.html" width="980px" height="75px" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var num=document.getElementById("logonum");
+			var stime=5;
+			var flag;
+			num.innerHTML=stime;
+			function dao(){
+				stime=stime-1;
+				num.innerHTML=stime;
+				if(stime==0){
+					clearInterval(flag);
+					location.href="index.html";
+				}
+			}
+			flag=setInterval(dao,1000);
+		}
+	</script>
+</html>
